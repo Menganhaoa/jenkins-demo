@@ -1,8 +1,7 @@
-apiVersion: apps/v1
+apiVersion: app/v1
 kind: Deployment
 metadata:
   name: jenkins-demo
-  namespace: default
 spec:
   selector:
     matchLabels:
@@ -13,9 +12,9 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: harbor.od.com/app/jenkins-demo:${BUILD_TAG}
+      - image: cnych/jenkins-demo:<BUILD_TAG>
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
         env:
         - name: branch
-          value: ${BRANCH_NAME}
+          value: <BRANCH_NAME>
