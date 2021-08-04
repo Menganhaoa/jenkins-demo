@@ -13,9 +13,9 @@ spec:
         app: jenkins-demo
     spec:
       containers:
-      - image: harbor.lin.com/library/jenkins-demo:<BUILD_TAG>
+      - image: harbor.od.com/app/jenkins-demo:${build_tag}
         imagePullPolicy: IfNotPresent
         name: jenkins-demo
         env:
         - name: branch
-          value: <BRANCH_NAME>
+          value: master
